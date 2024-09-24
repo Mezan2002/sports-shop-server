@@ -2,8 +2,8 @@ import { model, Schema } from "mongoose";
 import { TProduct } from "./product.interface";
 
 const colorSchema = new Schema({
-  color_code: { type: [String], required: true },
   color_name: { type: String, required: true },
+  color_code: { type: String, required: true },
 });
 
 const priceSchema = new Schema({
@@ -25,7 +25,7 @@ const categorySchema = new Schema({
 
 const productAttributesSchema = new Schema({
   size: { type: [String] },
-  color: { type: colorSchema, required: true },
+  color: { type: [colorSchema], required: true },
 });
 
 const productSchema = new Schema<TProduct>({

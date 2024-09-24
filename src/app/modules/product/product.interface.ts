@@ -19,10 +19,12 @@ export type TProduct = {
   };
   productAttributes: {
     size?: string[];
-    color: {
-      color_code: string[];
-      color_name: string;
-    };
+    color: [
+      {
+        color_name: string;
+        color_code: string;
+      }
+    ];
   };
   rating: number;
   images: string[];
